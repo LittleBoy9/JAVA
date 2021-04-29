@@ -1,3 +1,5 @@
+//
+
 import java.util.*;
 interface methods{
     void addNode(int data);
@@ -13,11 +15,11 @@ public class Linklist implements methods{
             this.link = null;
         }
     }
-        
+
     public Node head = null;
-    
+
     public void addNode(int data){
-        Node newNode = new Node(data); 
+        Node newNode = new Node(data);
         try{
             if(head != null){
                 Node current = head;
@@ -30,7 +32,7 @@ public class Linklist implements methods{
             }
         }catch(Exception exp){
             System.out.println("Failed To Insert, Some Problem Occured !!");
-        }    
+        }
     }
     public void delete(){
         try{
@@ -44,10 +46,10 @@ public class Linklist implements methods{
                     current = current.link;
                 }
                 preCurrent.link = null;
-            }   
+            }
         }catch(Exception exp){
             System.out.println("Failed To Delete, Some Problem Occured !!");
-        }     
+        }
     }
     public void show(){
         Node current = head;
@@ -60,12 +62,12 @@ public class Linklist implements methods{
                 System.out.print(current.data+"  ");
                 current = current.link;
             }
-            System.out.println();   
+            System.out.println();
         }catch(Exception exp){
             System.out.println("Failrd To Show, Some Problem Occured !!");
         }
-        
-    
+
+
     }
     public static void main(String[] args){
         Linklist list = new Linklist();
@@ -95,7 +97,7 @@ public class Linklist implements methods{
                 case 0:
                     return;
                 default:
-                    System.out.println("Wrong Choice");                 
+                    System.out.println("Wrong Choice");
             }
         }
     }

@@ -30,8 +30,8 @@ class AddMatrix{
     }
     int[][] addMatrices(int[][] mat1, int[][] mat2){
       int[][] finalMat = new int[row][col];
-      for(int i=0;i<2;i++){
-         for(int j=0;j<2;j++){
+      for(int i=0;i<row;i++){
+         for(int j=0;j<row;j++){
            finalMat[i][j] = mat1[i][j] + mat2[i][j];
          }
       }
@@ -43,21 +43,19 @@ class AddMatrix{
         Scanner scn = new Scanner(System.in);
         System.out.print("Enter number of Rows Of Matrices:");
         int row = scn.nextInt();
-        System.out.print("\nEnter number of Columns Of Matrices:");
+        System.out.print("Enter number of Columns Of Matrices:");
         int col = scn.nextInt();
 
-        int[][] mat1 = null;
-        int[][] mat2 = null;
 
         if(row > 0 && col > 0){
           AddMatrix mx = new AddMatrix(row,col);
-          mat1 = new int[row][col];
-          mat2 = new int[row][col];
+          int[][] mat1 = new int[row][col];
+          int[][] mat2 = new int[row][col];
           mat1 = mx.getData(mat1, "First");
           mx.display(mat1, "First");
           mat2 = mx.getData(mat2, "Second");
           mx.display(mat2, "Second");
-          mx.display(mx.addMatrices(mat1, mat2)," Final Added ");
+          mx.display(mx.addMatrices(mat1, mat2)," Final Added Matrix");
         }else{
           System.out.println("Please Enter Valid Row And Columns !");
         }
