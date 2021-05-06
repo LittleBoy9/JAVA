@@ -1,9 +1,12 @@
-/*import java.io.*;
+// Java code to demonstrate Graph representation
+// using LinkedList in Java
+
+
 import java.util.*;
 class CreateGraph{
 	static class Edge{
 		int source, destination, weight;
-		public Edge(int source,int nbr,int wt){
+		public Edge(int source,int destination,int weight){
 			this.source = source;
 			this.destination = destination;
 			this.weight = weight;
@@ -29,7 +32,6 @@ class CreateGraph{
 		public void printGraph(){
 			for(int i=0; i<vertices; i++){
 				LinkedList<Edge> list = adjList[i];
-				System.out.println(list.size());
 				for(int j=0;j<list.size();j++){
 					System.out.println("Vertex -"+i+" is connected to "+list.get(j).destination+" with weight "+list.get(j).weight);
 				}
@@ -55,27 +57,27 @@ class CreateGraph{
 
 
 	}
-}*/
+}
 
 // Java code to demonstrate Graph representation
 // using ArrayList in Java
-import java.util.*;
+
+/*import java.util.*;
 
 class CreateGraph {
 
-	static void addEdge(ArrayList<ArrayList<Integer> > adj,
-						int u, int v)
+	static void addEdge(ArrayList<ArrayList<Integer>> adj,int u, int v)
 	{
 		adj.get(u).add(v);
 		//adj.get(v).add(u);
 	}
 
-	static void printAdjacencyList(ArrayList<ArrayList<Integer> > adj)
+	static void printAdjacencyList(ArrayList<ArrayList<Integer>> adj)
 	{
 		for (int i = 0; i < adj.size(); i++) {
-			System.out.println("Adjacency list of " + i);
+			System.out.print("Adjacency list of " + i+" : ");
 			for (int j = 0; j < adj.get(i).size(); j++) {
-				System.out.print(adj.get(i).get(j) + " ");
+				System.out.print(adj.get(i).get(j) + "  ");
 			}
 			System.out.println();
 		}
@@ -85,7 +87,7 @@ class CreateGraph {
 	{
 		// Creating a graph with 5 vertices
 		int V = 5;
-		ArrayList<ArrayList<Integer> > adj = new ArrayList<ArrayList<Integer> >(V);
+		ArrayList<ArrayList<Integer>> adj = new ArrayList<ArrayList<Integer>>(V);
 		for (int i = 0; i < V; i++)
 			adj.add(new ArrayList<Integer>());
 
@@ -105,3 +107,4 @@ class CreateGraph {
 		printAdjacencyList(adj);
 	}
 }
+*/

@@ -1,7 +1,7 @@
 /* ******** Print the matrix in Spiral Form ********** //
 ----------- 4-28-2021  || Sounak Das ----------
 /----------------------------------------------*/
-
+/*
 import java.util.*;
 class SpiralMatrix{
   private int row, col, mat[][];
@@ -63,5 +63,59 @@ class SpiralMatrix{
       mx.display();
       mx.spiralMatrix();
     }
+  }
+}
+*/
+
+
+class SpiralMatrix{
+  //int[][] mat = {{1,3,9,8},{5,6,1,4},{9,1,3,5},{8,6,2,7}};
+  int[][] mat = { 
+      {1,2,3,4,5},
+      {6,7,8,9,10},
+      {11,12,13,14,15}
+  };
+  int dir = 0;
+
+  int t=0;
+  int b=mat.length-1;
+  int l=0;
+  int r=mat[0].length-1;
+
+  int i;
+
+
+  public void sp(){
+    while(t<=b && l<=r){
+      if(dir == 0){
+        for(i=l;i<=r;i++){
+          System.out.print(mat[t][i]+"  ");
+        }
+        t++;
+      }
+      else if(dir == 1){
+        for(i=t;i<=b;i++){
+          System.out.print(mat[i][r]+"  ");
+        }
+        r--;
+      }
+      if(dir == 2){
+        for(i=r;i>=l;i--){
+          System.out.print(mat[b][i]+"  ");
+        }
+        b--;
+      }
+      if(dir == 3){
+        for(i=b;i>=t;i--){
+          System.out.print(mat[i][l]+"  ");
+        }
+        l++;
+      }
+      dir = (dir+1)%4;
+    }
+  }
+  public static void main(String args[]){
+    SpiralMatrix obj = new SpiralMatrix();
+    obj.sp();
   }
 }
